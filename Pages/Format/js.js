@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     enlargeTextButton.addEventListener('click', function() {
         const currentSize = parseFloat(getComputedStyle(body).fontSize);
-        body.style.fontSize = (currentSize + 1) + 'px';
+        body.style.fontSize = (currentSize + 10) + 'px';
     });
 
     shrinkTextButton.addEventListener('click', function() {
         const currentSize = parseFloat(getComputedStyle(body).fontSize);
         if (currentSize > 10) { // Prevents text from becoming too small
-            body.style.fontSize = (currentSize - 1) + 'px';
+            body.style.fontSize = (currentSize - 10) + 'px';
         }
     });
 
