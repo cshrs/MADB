@@ -1,5 +1,7 @@
 // Format/js.js
 
+// Buttons
+
 document.addEventListener('DOMContentLoaded', function() {
     const enlargeTextButton = document.getElementById('text-enlarge');
     const shrinkTextButton = document.getElementById('text-shrink');
@@ -22,5 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const text = body.textContent || body.innerText;
         let speech = new SpeechSynthesisUtterance(text);
         window.speechSynthesis.speak(speech);
+    });
+});
+
+// Event listeners 
+document.addEventListener('DOMContentLoaded', function() {
+    const pressHereLink = document.getElementById('pressHereLink');
+
+    pressHereLink.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            window.location.href = this.getAttribute('href');
+        }
     });
 });
