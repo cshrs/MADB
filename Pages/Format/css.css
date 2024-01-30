@@ -1,0 +1,83 @@
+/* Reset some default styles for better cross-browser consistency */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a basic styling to the body */
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f3f3f3; /* Pastel background color */
+    color: #333;
+}
+
+/* Style the main title */
+.special-h1 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Style the navigation header */
+#topnav {
+    background-color: #333;
+    text-align: center;
+}
+
+/* Style the navigation links */
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Style the "Press Here" button */
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em; /* Larger font size */
+    padding: 15px 30px; /* Larger padding for a larger button */
+    border-radius: 8px;
+    background-color: #86c7b9; /* Pastel green color */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on navigation links */
+.nav a:hover {
+    background-color: #68a19f; /* Darker shade on hover */
+}
+
+/* Clearfix for floated elements inside the navigation */
+.clear {
+    clear: both;
+}
+
+/* Additional styling for the wrapper */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive styling for smaller screens */
+@media only screen and (max-width: 600px) {
+    .nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
