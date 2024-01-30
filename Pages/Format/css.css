@@ -67,7 +67,7 @@ body {
 }
 
 /* Accessibility features */
-button#text-enlarge, button#text-speech {
+button#text-enlarge, button#text-speech, button#text-shrink {
     font-size: 1em;
     padding: 10px 15px;
     margin: 10px;
@@ -79,6 +79,8 @@ button#text-enlarge, button#text-speech {
     transition: background-color 0.3s ease;
 }
 
-button#text-enlarge:hover, button#text-speech:hover {
+button#text-enlarge:hover, button#text-speech:hover, button#text-shrink:hover,{
     background-color: #45a049; /* Darker shade on hover */
+
+
 }

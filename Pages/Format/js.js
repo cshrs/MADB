@@ -2,12 +2,20 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const enlargeTextButton = document.getElementById('text-enlarge');
+    const shrinkTextButton = document.getElementById('text-shrink');
     const speechButton = document.getElementById('text-speech');
     const body = document.body;
 
     enlargeTextButton.addEventListener('click', function() {
         const currentSize = parseFloat(getComputedStyle(body).fontSize);
         body.style.fontSize = (currentSize + 1) + 'px';
+    });
+
+    shrinkTextButton.addEventListener('click', function() {
+        const currentSize = parseFloat(getComputedStyle(body).fontSize);
+        if (currentSize > 10) { // Prevents text from becoming too small
+            body.style.fontSize = (currentSize - 1) + 'px';
+        }
     });
 
     speechButton.addEventListener('click', function() {
