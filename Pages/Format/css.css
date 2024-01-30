@@ -4,74 +4,55 @@
 
 
 
-/* Reset some default styles for better cross-browser consistency */
-body, h1, h2, p, ul {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
+/* Format/css.css */
 
-/* Apply a basic styling to the body */
 body {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    background-color: #2b2b2b; /* Pastel background color */
-    color: #333;
+    font-family: Arial, sans-serif; /* Simple and clear font */
+    font-size: 16px; /* Base font size */
+    color: #333; /* Dark text for readability */
+    background-color: #f4f4f4; /* Light background to contrast with the text */
+    line-height: 1.6; /* Adequate space between lines */
 }
 
-/* Style the main title */
 .special-h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2em;
-    text-align: center;
-    margin: 20px 0;
-    color: #ffffff;
+    font-size: 2em; /* Larger size for headings */
+    color: #0044cc; /* High-contrast color for headings */
 }
 
-/* Style the navigation header */
-#topnav {
-    background-color: #333;
-    text-align: center;
-}
-
-/* Style the navigation links */
-.nav {
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-}
-
-.nav li {
-    display: inline;
-    margin-right: 10px;
-}
-
-/* Style the "Press Here" button */
 .nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 125px; /* Larger font size */
-    padding: 15px 30px; /* Larger padding for a larger button */
-    border-radius: 8px;
-    background-color: #86c7b9; /* Pastel green color */
-    transition: background-color 0.3s ease;
+    display: block; /* Makes the entire area clickable */
+    padding: 10px 15px; /* Larger clickable area */
+    font-size: 1.2em; /* Larger text for navigation links */
+    background-color: #eee; /* Light background for navigation links */
+    color: #000; /* Dark text for navigation links */
+    text-decoration: none; /* Removes underline from links */
+    border-radius: 5px; /* Rounded corners for aesthetic */
+    margin: 5px 0; /* Space between navigation links */
 }
 
-/* Hover effect on navigation links */
-.nav a:hover {
-    background-color: #68a19f; /* Darker shade on hover */
+.nav a:hover, .nav a:focus {
+    background-color: #ddd; /* Change background on hover/focus for feedback */
 }
 
-/* Clearfix for floated elements inside the navigation */
-.clear {
-    clear: both;
-}
-
-/* Additional styling for the wrapper */
 .wrapper {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 800px; /* Max width for readability */
+    margin: 0 auto; /* Center aligning the wrapper */
+    padding: 20px; /* Padding around the content */
+}
+
+.clear {
+    clear: both; /* Clearing floats */
+}
+
+/* Accessibility Features */
+button#text-enlarge {
+    font-size: 1em;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button#text-speech {
+    font-size: 1em;
+    padding: 10px;
+    margin: 10px 0;
 }
