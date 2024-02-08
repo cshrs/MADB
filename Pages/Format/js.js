@@ -1,49 +1,18 @@
-// Wait for the DOM to fully load before attaching event handlers
-document.addEventListener('DOMContentLoaded', function() {
-    // Text resize buttons
-    const enlargeTextButton = document.getElementById('text-enlarge');
-    const shrinkTextButton = document.getElementById('text-shrink');
-    const body = document.body;
+document.addEventListener('DOMContentLoaded', () => {
+    const enlargeButton = document.getElementById('text-enlarge');
+    const shrinkButton = document.getElementById('text-shrink');
+    const speechButton = document.getElementById('text-speech');
 
-    // Enlarge text event listener
-    if(enlargeTextButton) {
-        enlargeTextButton.addEventListener('click', function() {
-            const currentSize = parseFloat(getComputedStyle(body).fontSize);
-            body.style.fontSize = `${currentSize + 2}px`; // Adjusted the increase to +2 for finer control
-        });
-    }
+    enlargeButton.addEventListener('click', () => {
+        document.body.style.fontSize = 'larger';
+    });
 
-    // Shrink text event listener
-    if(shrinkTextButton) {
-        shrinkTextButton.addEventListener('click', function() {
-            const currentSize = parseFloat(getComputedStyle(body).fontSize);
-            if (currentSize > 10) { // Prevents text from becoming too small
-                body.style.fontSize = `${currentSize - 2}px`; // Adjusted the decrease to -2 for finer control
-            }
-        });
-    }
+    shrinkButton.addEventListener('click', () => {
+        document.body.style.fontSize = 'smaller';
+    });
 
-    // Read aloud selected text
-    const readSelectedTextButton = document.getElementById('read-selected-text');
-    if(readSelectedTextButton) {
-        readSelectedTextButton.addEventListener('click', function() {
-            let selectedText = window.getSelection().toString();
-            if (selectedText.length > 0) {
-                let speech = new SpeechSynthesisUtterance(selectedText);
-                window.speechSynthesis.speak(speech);
-            } else {
-                alert('Please select text to read.');
-            }
-        });
-    }
-
-    // Enhance navigation for accessibility
-    const pressHereLink = document.getElementById('pressHereLink');
-    if(pressHereLink) {
-        pressHereLink.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                window.location.href = this.getAttribute('href');
-            }
-        });
-    }
+    speechButton.addEventListener('click', () => {
+        let text = document.getElementById('main-content').textContent;
+        responsiveVoice.speak(text); // Using ResponsiveVoice API
+    });
 });

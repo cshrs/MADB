@@ -1,75 +1,77 @@
-/* General style resets to ensure consistency across browsers */
-body, h1, h2, p, ul, li {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+
+body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif; /* Arial is chosen for readability */
+    font-family: 'Work Sans', sans-serif;
 }
 
-/* Setting up the background and text color for the entire page */
 body {
-    background-color: #f0f0f0; /* A light grey that's easy on the eyes */
-    color: #0b0c0c; /* A very dark grey for text, providing good contrast */
     font-size: 16px;
-    line-height: 1.5;
-    padding: 20px;
+    line-height: 1.6;
+    background-color: #2b2b2b;
+    color: #333;
 }
 
-/* The wrapper centers content and adds a white background for readability */
-.wrapper {
-    max-width: 1020px; /* Matches the Gov.uk content width for familiarity */
-    margin: auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 0 #bfc1c3; /* A subtle shadow for depth */
-}
-
-/* Styling for the main heading */
 .special-h1 {
-    font-size: 24px; /* Slightly larger for emphasis */
-    text-align: left; /* Left-aligned text for traditional reading flow */
-    color: #0b0c0c;
-    padding: 20px 0;
-    border-bottom: 1px solid #bfc1c3; /* A separator for visual hierarchy */
-    margin-bottom: 20px; /* Spacing for a cleaner look */
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+    color: #ffffff;
 }
 
-/* Navigation styling to guide users through the site */
-nav, footer {
-    text-align: left; /* Aligns content to the left for a structured layout */
-    padding: 10px 0;
-    margin-top: 20px; /* Adds space above for separation */
+#topnav {
+    background-color: #333;
+    text-align: center;
 }
 
-.nav, .nav li {
-    list-style: none; /* Removes default bullet points for a cleaner look */
-    margin: 0 0 10px 0; /* Adds spacing between navigation links */
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.nav li {
+    display: inline;
+    margin-right: 10px;
 }
 
 .nav a {
-    text-decoration: none; /* No underline for a cleaner link appearance */
-    color: #1d70b8; /* Gov.uk's recognizable link color for familiarity */
-    padding: 5px 0;
-    display: block; /* Makes the entire area clickable for better accessibility */
-    font-size: 19px; /* Larger font size for easy reading */
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.25em;
+    padding: 15px 30px;
+    border-radius: 8px;
+    background-color: #86c7b9;
 }
 
-/* Hover effects for links to provide visual feedback */
 .nav a:hover {
-    text-decoration: underline; /* Adds an underline on hover for clarity */
+    background-color: #68a19f;
 }
 
-/* Styling for the accessibility buttons */
-.accessibility-options {
-    display: flex;
-    flex-direction: column; /* Organizes buttons vertically for better access */
+.clear {
+    clear: both;
+}
+
+.wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 button {
-    border-radius: 0; /* Square buttons for a modern, clean look */
+    font-size: 1em;
     padding: 10px 15px;
-    margin-bottom: 10px; /* Spacing between buttons for easier interaction */
+    margin: 10px;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #e8e8e8; /* A darker shade on hover for visual feedback */
+    background-color: #45a049;
 }
