@@ -1,24 +1,34 @@
+/* General resets and font import */
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #000; /* Black background */
+    color: #fff; /* Ensure text is readable on the black background */
+    font-size: 18px; /* Increase base font size for better readability */
+    line-height: 1.6;
+    padding: 20px; /* Increased padding for a thicker viewport appearance */
+}
+
 .wrapper {
     max-width: 1500px;
-    margin: 0 auto;
-    padding: 20px;
-    padding-bottom: 100px; /* Adjust based on footer height */
+    margin: auto;
+    padding: 40px; /* Increased padding inside the wrapper for more space */
+    color: #fff;
 }
 
 .special-h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 2em;
+    font-size: 3em; /* Increase size for better visibility */
     text-align: center;
+    margin: 40px 0; /* Increased margin for more space above and below the title */
     color: #ffffff;
-    margin-bottom: 20px; /* Space below the title */
 }
 
+/* Footer navigation */
 footer {
     position: fixed;
     left: 0;
@@ -26,25 +36,22 @@ footer {
     width: 100%;
     background-color: #333;
     text-align: center;
+    padding: 20px 0; /* Increased padding for a larger bar */
 }
 
-.nav {
+.nav, .nav li {
     list-style: none;
-    padding: 10px;
+    padding: 0;
     margin: 0;
-    display: inline-block;
-}
-
-.nav li {
     display: inline;
-    margin: 0 10px;
 }
 
 .nav a {
     text-decoration: none;
     color: #fff;
     background-color: #86c7b9;
-    padding: 15px 30px;
+    padding: 20px 40px; /* Increased padding for larger buttons */
+    font-size: 1.25em; /* Increase font size for readability */
     border-radius: 8px;
     transition: background-color 0.3s ease;
 }
@@ -53,21 +60,24 @@ footer {
     background-color: #68a19f;
 }
 
+/* Accessibility options styling */
 .accessibility-options {
     position: fixed;
-    top: 50%; /* Adjust as necessary */
-    right: 10px; /* Change to 'left' if preferred */
+    top: 50%;
+    right: 10px; /* Adjust position based on preference */
     transform: translateY(-50%);
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 button {
     display: block;
-    margin: 10px 0;
+    margin: 20px 0; /* Increased spacing between buttons */
     color: #ffffff;
     background-color: #4CAF50;
     border: none;
     border-radius: 8px;
-    padding: 10px;
+    padding: 15px 20px; /* Increased padding for larger buttons */
+    font-size: 1.25em; /* Increased font size for better visibility */
     cursor: pointer;
 }
 
