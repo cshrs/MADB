@@ -1,18 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const enlargeButton = document.getElementById('text-enlarge');
-    const shrinkButton = document.getElementById('text-shrink');
+// Format/js.js
+
+// Buttons
+
+document.addEventListener('DOMContentLoaded', function() {
+    const enlargeTextButton = document.getElementById('text-enlarge');
+    const shrinkTextButton = document.getElementById('text-shrink');
     const speechButton = document.getElementById('text-speech');
+    const body = document.body;
 
-    enlargeButton.addEventListener('click', () => {
-        document.body.style.fontSize = 'larger';
+    enlargeTextButton.addEventListener('click', function() {
+        const currentSize = parseFloat(getComputedStyle(body).fontSize);
+        body.style.fontSize = (currentSize + 10) + 'px';
     });
 
-    shrinkButton.addEventListener('click', () => {
-        document.body.style.fontSize = 'smaller';
+    shrinkTextButton.addEventListener('click', function() {
+        const currentSize = parseFloat(getComputedStyle(body).fontSize);
+        if (currentSize > 10) { // Prevents text from becoming too small
+            body.style.fontSize = (currentSize - 10) + 'px';
+        }
     });
 
-    speechButton.addEventListener('click', () => {
-        let text = document.getElementById('main-content').textContent;
-        responsiveVoice.speak(text); // Using ResponsiveVoice API
+    speechButton.addEventListener('click', function() {
+        const text = body.textContent || body.innerText;
+        let speech = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(speech);
+    });
+});
+
+// Event listeners 
+document.addEventListener('DOMContentLoaded', function() {
+    const pressHereLink = document.getElementById('pressHereLink');
+
+    pressHereLink.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            window.location.href = this.getAttribute('href');
+        }
     });
 });
