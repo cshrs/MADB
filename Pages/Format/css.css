@@ -1,86 +1,75 @@
-/* General resets and font import */
+/* General style resets to ensure consistency across browsers */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif; /* Gov.uk uses Arial for its simplicity and readability */
+    font-family: 'Arial', sans-serif; /* Arial is chosen for readability */
 }
 
+/* Setting up the background and text color for the entire page */
 body {
-    background-color: #f0f0f0; /* Light grey background */
-    color: #0b0c0c; /* Almost black for text */
+    background-color: #f0f0f0; /* A light grey that's easy on the eyes */
+    color: #0b0c0c; /* A very dark grey for text, providing good contrast */
     font-size: 16px;
     line-height: 1.5;
     padding: 20px;
 }
 
+/* The wrapper centers content and adds a white background for readability */
 .wrapper {
-    max-width: 1020px; /* Similar to Gov.uk content width */
+    max-width: 1020px; /* Matches the Gov.uk content width for familiarity */
     margin: auto;
     padding: 20px;
-    background-color: #ffffff; /* White background for content areas */
-    box-shadow: 0 2px 0 #bfc1c3; /* Subtle shadow for depth */
+    background-color: #ffffff;
+    box-shadow: 0 2px 0 #bfc1c3; /* A subtle shadow for depth */
 }
 
+/* Styling for the main heading */
 .special-h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 24px; /* Clear and larger font size for headings */
-    text-align: left; /* Align text to the left for readability */
+    font-size: 24px; /* Slightly larger for emphasis */
+    text-align: left; /* Left-aligned text for traditional reading flow */
     color: #0b0c0c;
     padding: 20px 0;
-    border-bottom: 1px solid #bfc1c3; /* Underline for separation */
-    margin-bottom: 20px; /* Spacing below the title */
+    border-bottom: 1px solid #bfc1c3; /* A separator for visual hierarchy */
+    margin-bottom: 20px; /* Spacing for a cleaner look */
 }
 
-/* Navigation and Footer */
+/* Navigation styling to guide users through the site */
 nav, footer {
-    background-color: transparent;
-    text-align: left;
+    text-align: left; /* Aligns content to the left for a structured layout */
     padding: 10px 0;
-    margin-top: 20px;
+    margin-top: 20px; /* Adds space above for separation */
 }
 
 .nav, .nav li {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 10px 0; /* Stack links vertically with space between */
+    list-style: none; /* Removes default bullet points for a cleaner look */
+    margin: 0 0 10px 0; /* Adds spacing between navigation links */
 }
 
 .nav a {
-    text-decoration: none;
-    color: #1d70b8; /* Blue color for links */
+    text-decoration: none; /* No underline for a cleaner link appearance */
+    color: #1d70b8; /* Gov.uk's recognizable link color for familiarity */
     padding: 5px 0;
-    display: block; /* Make links block to fill the container for easier clicking */
-    font-size: 19px;
+    display: block; /* Makes the entire area clickable for better accessibility */
+    font-size: 19px; /* Larger font size for easy reading */
 }
 
+/* Hover effects for links to provide visual feedback */
 .nav a:hover {
-    text-decoration: underline; /* Underline on hover for visual feedback */
+    text-decoration: underline; /* Adds an underline on hover for clarity */
 }
 
-/* Accessibility Options Styling */
+/* Styling for the accessibility buttons */
 .accessibility-options {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    z-index: 1000;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Organizes buttons vertically for better access */
 }
 
 button {
-    background-color: #f3f2f1; /* Light grey for buttons */
-    color: #0b0c0c;
-    border: 2px solid #0b0c0c; /* Solid border for contrast */
-    border-radius: 0; /* Gov.uk uses square buttons for simplicity */
+    border-radius: 0; /* Square buttons for a modern, clean look */
     padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 10px; /* Space between buttons */
-    text-align: left; /* Align text left within the button */
+    margin-bottom: 10px; /* Spacing between buttons for easier interaction */
 }
 
 button:hover {
-    background-color: #e8e8e8; /* Slightly darker on hover */
+    background-color: #e8e8e8; /* A darker shade on hover for visual feedback */
 }
