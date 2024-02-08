@@ -20,13 +20,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    speechButton.addEventListener('click', function() {
-        const text = body.textContent || body.innerText;
-        let speech = new SpeechSynthesisUtterance(text);
-        window.speechSynthesis.speak(speech);
-    });
-});
+// Read allowed selected text
 
+document.getElementById('read-selected-text').addEventListener('click', function() {
+    // Get the selected text
+    let selectedText = window.getSelection().toString();
+    
+    // Check if there's selected text
+    if (selectedText.length > 0) {
+        // Create a new SpeechSynthesisUtterance object
+        let speech = new SpeechSynthesisUtterance(selectedText);
+        
+        // Optionally, customize the speech properties
+        // speech.voice = speechSynthesis.getVoices().filter(voice => voice.name == "Google UK English Male")[0];
+        // speech.pitch = 1; // Can be between 0 and 2
+        // speech.rate = 1; // Can be between 0.1 and 10
+        
+        // Speak the selected text
+        window.speech
+
+    
 // Event listeners 
 document.addEventListener('DOMContentLoaded', function() {
     const pressHereLink = document.getElementById('pressHereLink');
