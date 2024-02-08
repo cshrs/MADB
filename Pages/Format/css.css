@@ -62,7 +62,11 @@ nav, footer {
     right: 10px;
     transform: translateY(-50%);
     z-index: 1000;
+    display: flex; /* Add this line */
+    flex-direction: column; /* And this line */
+    align-items: flex-start; /* Ensures alignment to the start of the flex container, useful if there's any width set */
 }
+
 
 button {
     background-color: #007bff; /* Bright but not overwhelming */
@@ -70,7 +74,7 @@ button {
     border: none;
     border-radius: 4px; /* Consistency in shape */
     padding: 10px 15px;
-    font-size: 1em;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
