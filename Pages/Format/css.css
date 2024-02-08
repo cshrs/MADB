@@ -46,16 +46,21 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.accessibility-buttons button {
-    font-size: 30px; /* Larger text */
+.accessibility-buttons {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    font-size: 4em; /* Larger text */
     padding: 15px 20px; /* Larger buttons */
     margin: 15px 0; /* Adjusted spacing for larger buttons */
     font-weight: bold; /* Makes the text bolder for better readability */
 }
 
-
 button {
-    font-size: 40px;
+    font-size: 1em;
     padding: 10px 15px;
     margin: 10px 0; /* Adjusted for vertical layout */
     color: #ffffff;
