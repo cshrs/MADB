@@ -47,7 +47,7 @@ body {
 }
 
 .accessibility-buttons button {
-    font-size: 1.2em; /* Larger text */
+    font-size: 30px; /* Larger text */
     padding: 15px 20px; /* Larger buttons */
     margin: 15px 0; /* Adjusted spacing for larger buttons */
     font-weight: bold; /* Makes the text bolder for better readability */
@@ -55,7 +55,7 @@ body {
 
 
 button {
-    font-size: 1em;
+    font-size: 40px;
     padding: 10px 15px;
     margin: 10px 0; /* Adjusted for vertical layout */
     color: #ffffff;
