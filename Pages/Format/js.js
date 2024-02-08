@@ -37,3 +37,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Keyboard Navigation
+    
+    let focusableElements = Array.from(document.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
+    let currentIndex = -1; // Start before the first element
+
+    document.addEventListener('keydown', function(event) {
+        const key = event.key;
+
+        if (key === 'ArrowUp' || key === 'ArrowLeft') {
+            event.preventDefault(); // Prevent scrolling
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = focusableElements.length - 1; // Loop back to the last element
+            }
+            focusableElements[currentIndex].focus();
+        } else if (key === 'ArrowDown' || key === 'ArrowRight') {
+            event.preventDefault(); // Prevent scrolling
+            currentIndex++;
+            if (currentIndex >= focusableElements.length) {
+                currentIndex = 0; // Loop back to the first element
+            }
+            focusableElements[currentIndex].focus();
+        }
+    });
+});
