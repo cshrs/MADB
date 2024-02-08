@@ -53,14 +53,14 @@ body {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    font-size: 4em; /* Larger text */
+    font-size: 20px; /* Larger text */
     padding: 15px 20px; /* Larger buttons */
     margin: 15px 0; /* Adjusted spacing for larger buttons */
     font-weight: bold; /* Makes the text bolder for better readability */
 }
 
 button {
-    font-size: 1em;
+    font-size: 20px;
     padding: 10px 15px;
     margin: 10px 0; /* Adjusted for vertical layout */
     color: #ffffff;
