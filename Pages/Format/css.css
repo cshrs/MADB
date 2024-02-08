@@ -1,54 +1,51 @@
-/* Imports */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-
-
-/* Existing styles */
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    background-color: #2b2b2b;
-    color: #333;
+.wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 100px; /* Adjust based on footer height */
 }
 
 .special-h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 2em;
     text-align: center;
-    margin: 20px 0;
     color: #ffffff;
+    margin-bottom: 20px; /* Space below the title */
 }
 
-#topnav {
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background-color: #333;
     text-align: center;
 }
 
 .nav {
     list-style: none;
-    margin: 0;
     padding: 10px;
+    margin: 0;
+    display: inline-block;
 }
 
 .nav li {
     display: inline;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 .nav a {
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
-    font-size: 125px;
+    background-color: #86c7b9;
     padding: 15px 30px;
     border-radius: 8px;
-    background-color: #86c7b9;
     transition: background-color 0.3s ease;
 }
 
@@ -56,31 +53,24 @@ body {
     background-color: #68a19f;
 }
 
-.clear {
-    clear: both;
+.accessibility-options {
+    position: fixed;
+    top: 50%; /* Adjust as necessary */
+    right: 10px; /* Change to 'left' if preferred */
+    transform: translateY(-50%);
 }
 
-.wrapper {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Accessibility features */
-button#text-enlarge, button#text-speech, button#text-shrink {
-    font-size: 1em;
-    padding: 10px 15px;
-    margin: 10px;
+button {
+    display: block;
+    margin: 10px 0;
     color: #ffffff;
-    background-color: #4CAF50; /* Green background for visibility */
+    background-color: #4CAF50;
     border: none;
     border-radius: 8px;
+    padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-button#text-enlarge:hover, button#text-speech:hover, button#text-shrink:hover,{
-    background-color: #45a049; /* Darker shade on hover */
-
-
+button:hover {
+    background-color: #45a049;
 }
