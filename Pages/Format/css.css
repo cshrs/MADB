@@ -214,7 +214,7 @@ button:hover {
     background-color: #000000;
     color: #ffffff;
     padding: 40px;
-    margin: 200px auto 100px; /* Top, Horizontal Auto, Bottom */
+    margin: 100px auto 100px; /* Top, Horizontal Auto, Bottom */
     max-width: 1000px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
