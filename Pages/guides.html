@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Digital Literacy</title>
+    <link rel="stylesheet" href="Format/css.css">
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Format/js.js" defer></script>
+</head>
+<body>
+    <div class="navigation-page">
+        <div class="title-container">
+        <h1 class="special-h1">Introduction to Digital Literacy: Resources and Guide</h1>
+        <img src="/Users/edwardcashmore/Google Drive/Uni Work/Year 4/MAD B/Project/Pages/Images/icon.png" alt="Icon" class="title-icon">
+        </div> 
+        <div class="accessibility-buttons">
+            <button id="text-enlarge">Enlarge Text</button>
+            <button id="text-shrink">Shrink Text</button>
+            <button id="text-speech">Read Aloud</button>
+        </div>
+    
+
+    <div class="custom-dropdown-wrapper">
+        <div class="custom-dropdown">
+            <div class="dropdown-content">
+                    <button class="guide-option facebook" data-guide="facebook">Facebook Privacy</button>
+                    <button class="guide-option email" data-guide="email">Email Security</button>
+                    <button class="guide-option passwords" data-guide="passwords">Managing Passwords</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Content Sections -->
+    <div id="facebook" class="guide-content" style="display: none;">
+        <h1 class="facebook-h1">Facebook Privacy Guide</h1>
+        <div class="guide-container">
+            <div class="guide-page left">
+                <h2 class="facebook-h2">1. Customize Your Privacy Settings</h2>
+                <p><strong>Profile Privacy:</strong> Go through your Facebook privacy settings and adjust who can see your posts, send you friend requests, and how people can look you up. Regularly review these settings to ensure they're set according to your preference.</p>
+            </div>
+            <div class="guide-page right">
+                <h2 class="facebook-h2">2. Review Your Friends List</h2>
+                <p><strong>Know Your Audience:</strong> Periodically review your friends list to ensure you're only connected with people you know and trust. Remember, the more people have access to your information, the greater the risk of data misuse.</p>
+            </div>
+            <div class="guide-page left">
+                <h2 class="facebook-h2">3. Limit The Information You Share</h2>
+                <p><strong>Be Mindful:</strong> Be cautious about the personal information you share on your profile or posts. Avoid sharing sensitive information that could be used for identity theft, such as your home address, phone number, or date of birth.</p>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="guide-navigation">
+                <button class="prev-guide-step">Previous Step</button>
+                <button class="next-guide-step">Next Step</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="email" class="guide-content" style="display: none;">
+        <h1 class="email-h1">Guide to Identifying Scam Emails</h1>
+        <div class="guide-container">
+            <div class="guide-page left">
+                <h2 class="email-h2">1. Check the Sender's Email Address</h2>
+                <p><strong>Mismatched or Odd Email Addresses:</strong> Scammers often use email addresses that resemble legitimate ones but with subtle differences. For example, using "rn" instead of "m" (e.g., "admin@cornpany.com" instead of "admin@company.com").</p>
+                <p><strong>Public Email Domains:</strong> Be wary of emails coming from public email services (e.g., @gmail.com, @yahoo.com) when they claim to be from a legitimate organization, which should have its domain (e.g., @company.com).</p>
+                <img src="/Users/edwardcashmore/Google Drive/Uni Work/Year 4/MAD B/Project/gif1.gif" alt="Step 1 GIF" class="enlarge-image" onclick="toggleImageSize(this);">
+
+            </div>
+            <div class="guide-page right">
+                <h2 class="email-h2">2. Analyze the Email Content</h2>
+                <p><strong>Spelling and Grammar Mistakes:</strong> Professional organisations proofread their communication. Numerous errors could indicate a scam.</p>
+                <p><strong>Generic Greetings:</strong> Scammers often use generic phrases like "Dear Customer" because they are sending bulk emails and don’t know your name.</p>
+                <p><strong>Urgent or Threatening Language:</strong> Scammers create a sense of urgency to provoke quick action. Look out for threats or warnings of account closure, fines, or legal action.</p>
+                <img src="/Users/edwardcashmore/Google Drive/Uni Work/Year 4/MAD B/Project/image1.png" alt="Step 2 IMG" class="enlarge-image" onclick="toggleImageSize(this);"> 
+
+            </div>
+            <div class="guide-page left">
+                <h2 class="email-h2">3. Avoid Clicking on Suspicious Links or Attachments</h2>
+                <p><strong>Phishing emails often contain links to malicious websites or attachments that can infect your device with malware.</strong></p>
+                <p><strong>Before clicking on any links or downloading attachments, hover your cursor over them to preview the URL or file name. If the link or attachment appears suspicious or unfamiliar, refrain from interacting with it and report the email to your organization's IT department or email provider.</strong></p>
+                <img src="/Users/edwardcashmore/Google Drive/Uni Work/Year 4/MAD B/Project/image2.png" alt="Step 3 IMG" class="enlarge-image" onclick="toggleImageSize(this);"> 
+
+            </div>
+            <div class="guide-page left">
+                <h2 class="email-h2">4. Report Suspicious Emails</h2>
+                <p><strong>If you receive a suspicious email, report it to your organisation's IT department, email provider, or relevant authorities. Reporting phishing attempts helps protect others from falling victim to similar scams.</strong></p>
+            </div>
+        </div>
+            <!-- Navigation buttons -->
+            <div class="guide-navigation">
+                <button class="prev-guide-step">Previous Step</button>
+                <button class="next-guide-step">Next Step</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="passwords" class="guide-content" style="display: none;">
+        <h1 class="password-h1">Password Management Guide</h1>
+        <div class="guide-container">
+            <div class="guide-page left">
+                <h2 class="password-h2">1. Use Strong and Unique Passwords</h2>
+                <p><strong>Complexity:</strong> Create passwords that are a mix of letters (both uppercase and lowercase), numbers, and symbols.</p>
+                <p><strong>Length:</strong> Aim for at least 12 characters. Longer passwords are harder to crack.</p>
+                <p><strong>Unpredictability:</strong> Avoid using easily guessable information like your name, birthdate, or common words.</p>
+            </div>
+            <div class="guide-page right">
+                <h2 class="password-h2">2. Leverage a Password Manager</h2>
+                <p><strong>Centralized Security:</strong> Password managers store all your passwords in one secure place, protected by one master password.</p>
+                <p><strong>Password Generation:</strong> They can generate strong, random passwords for you, eliminating the need to create and remember complex passwords.</p>
+                <p><strong>Accessibility:</strong> Access your passwords across devices securely.</p>
+            </div>
+            <div class="guide-page left">
+                <h2 class="password-h2">3. Regularly Update Your Passwords</h2>
+                <p><strong>Security Practice:</strong> Change your passwords regularly to minimize the risk of being compromised. Aim to update your passwords every three to six months, especially for sensitive accounts like email and banking.</p>
+            </div>
+            <div class="guide-page right">
+                <h2 class="password-h2">4. Enable Two-Factor Authentication (2FA)</h2>
+                <p><strong>Extra Layer of Security:</strong> Whenever possible, enable two-factor authentication for your accounts. 2FA adds an additional step to your login process, typically a code sent to your phone or generated by an app, making it much harder for attackers to gain unauthorized access.</p>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="guide-navigation">
+                <button class="prev-guide-step">Previous Step</button>
+                <button class="next-guide-step">Next Step</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="wrapper">
+    <div id="bottomnav">
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="guides.html" class="active">Guides</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+/* General Styles */
+body {
+    margin: 15px;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+.title-container {
+    display: flex; 
+    text-align: center;
+    margin: 20px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content, if your content is in a row */
+    flex-direction: row;
+}
+
+/* Style for the title icon */
+.title-icon {
+    height: 150px; 
+    margin-left: -30px; 
+}
+
+
+h1, h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 24px;
+    color: #95b9ff;
+}
+
+p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+}
+
+a {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Special Heading */
+.special-h1 {
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: center;
+    margin-right: 20px; /* Adds some space between the h1 and the image, adjust as needed */
+
+}
+
+/* Content Section */
+#content {
+    padding: 40px 80px;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 20px 40px;
+}
+
+/* Bottom Navigation */
+#bottomnav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    z-index: 1000;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #ffffff;
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.nav a.active {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.nav a.active:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* Accessibility Buttons */
+.accessibility-buttons {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    font-size: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin: 0 10px;
+    color: #000000;
+    background-color: #bdf7ff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #000000;
+    color: #bdf7ff;
+}
+
+/* Tutorial Section */
+#tutorial {
+    padding: 40px;
+    background-color: #333;
+    color: #ffffff;
+    margin: 20px 0;
+    line-height: 1.6;
+    border-radius: 8px;
+}
+
+/* Dropdown */
+.custom-dropdown-wrapper {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.dropdown-btn {
+    background-color: #f6a9ff;
+    color: #000;
+    padding: 15px 30px;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.dropdown-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #333;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px 0;
+}
+
+.dropdown-content a {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px 20px;
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Guide Content */
+.guide-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.guide-content {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px;
+    margin: 270px auto 100px; /* Top, Horizontal Auto, Bottom */
+    max-width: 1000px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.guide-option {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 25px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.guide-option.facebook:hover {
+    background-color: #3b5998;
+    color: #ffffff;
+}
+
+.guide-option.email:hover {
+    background-color: #dd4b39;
+    color: #ffffff;
+}
+
+.guide-option.passwords:hover {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.guide-page {
+    margin-bottom: 20px;
+}
+
+.guide-navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.guide-navigation button {
+    margin: 5px;
+    
+}
+
+/* Guide styling */
+
+.facebook-h1 {
+    color: #3b5998; 
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+
+
+}
+
+
+.facebook-h2 {
+    color: #3b5998; 
+    text-align: center;
+}
+
+.password-h1 {
+    color: #4caf50;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+
+
+
+}
+
+
+.password-h2 {
+    color: #4caf50;
+    text-align: center;
+}
+
+.email-h1 {
+    color: #dd4b39;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+
+
+
+}
+
+
+.email-h2 {
+    color: #dd4b39;
+    text-align: center;
+}
+
+
+
+/* Quiz */
+#check-answers {
+    display: block;
+    margin: 40px auto;
+    width: fit-content;
+}
+
+.quiz-results {
+    text-align: center;
+    margin-top: 20px;
+    color: #f77f7f;
+    font-size: 20px;
+}
+
+/* link styling */
+.resource-link {
+    font-weight: bold;
+    color: #B9F1F9;
+    text-decoration: none;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+        font-size: 14px;
+    }
+
+    h1, h2, p, ul {
+        margin: 10px;
+        font-size: 18px;
+    }
+
+    .navigation-page, .content-section, .guide-content, #feedback-form {
+        padding: 5px;
+    }
+
+    .nav li, .accessibility-buttons button {
+        font-size: 12px
