@@ -84,3 +84,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.toggleImageSize = image => image.classList.toggle('enlarged');
 
+    // Add 'A' and 'D' keyboard navigation for guide steps
+    document.addEventListener("keydown", function (event) {
+        if (event.key.toLowerCase() === "a") {
+            document.querySelector(".prev-guide-step")?.click();
+        } else if (event.key.toLowerCase() === "d") {
+            document.querySelector(".next-guide-step")?.click();
+        }
+    });
+});
