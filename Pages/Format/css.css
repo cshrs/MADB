@@ -178,31 +178,36 @@ button:hover {
 
 .dropdown-content {
     display: block;
-    position: absolute;
+    position: relative;
     width: 100%;
     left: 0;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #333;
+    background-color: #333; /* Dark background for contrast */
     border-radius: 0 0 5px 5px;
     z-index: 1;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px; /* Adjusted for readability */
     padding: 20px 0;
+    color: #fff; /* Light text for readability */
 }
 
 .dropdown-content a {
     display: inline-block;
-    margin: 20px;
-    padding: 20px 20px;
-    color: black;
+    margin: 10px; /* Adjusted for better spacing */
+    padding: 10px 20px; /* Balanced padding */
+    color: #fff; /* Light color for readability */
     text-decoration: none;
-    background-color: transparent;
+    background-color: #444; /* Slightly lighter than the dropdown for distinction */
+    border-radius: 5px; /* Rounded corners for a modern look */
     font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #555; /* Darker on hover for interactive feedback */
+    color: #ddd; /* Text color change on hover */
 }
+
 
 /* Guide Content */
 .guide-container {
