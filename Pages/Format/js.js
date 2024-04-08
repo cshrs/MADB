@@ -182,6 +182,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Image enlarge
-function toggleImageSize(image) {
-    image.classList.toggle('enlarged'); // Toggle the 'enlarged' class
-}
+$(document).ready(function() {
+    $('.enlarge-image').click(function() {
+        // Toggle the 'zoomed' class which controls the zoom
+        $(this).toggleClass('zoomed');
+    });
+});
+
