@@ -71,20 +71,23 @@ document.querySelectorAll('.guide-navigation').forEach(function(nav) {
         });
     }
 
-    $(document).ready(function() {
-        // Keyboard navigation for 'A' and 'D' keys
-        $(document).keydown(function(event) {
-            // Check if 'A' key is pressed
-            if (event.key === 'a' || event.key === 'A') {
-                $('.prev-guide-step:visible').trigger('click');
-            }
-            // Check if 'D' key is pressed
-            else if (event.key === 'd' || event.key === 'D') {
-                $('.next-guide-step:visible').trigger('click');
-            }
-        });
+    // Previous step button functionality
+    prevButton.addEventListener('click', function() {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+        }
     });
-    
+
+    // Next step button functionality
+    nextButton.addEventListener('click', function() {
+        if (currentStep < guidePages.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+});
+
     // Dropdown toggle with jQuery for consistency
     $(document).ready(function() {
         $('.dropdown-btn').click(function() {
