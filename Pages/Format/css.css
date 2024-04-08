@@ -179,8 +179,9 @@ button:hover {
 .dropdown-content {
     display: block;
     position: relative;
-    width: 100%;
-    left: 0;
+    width: 100vw; /* Set width to 100% of the viewport width */
+    left: 50%; /* Move to the center */
+    transform: translateX(-50%); /* Offset by its own width to align left edge with viewport */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background-color: #333; /* Dark background for contrast */
     border-radius: 0 0 5px 5px;
@@ -189,25 +190,22 @@ button:hover {
     font-size: 20px; /* Adjusted for readability */
     padding: 20px 0;
     color: #fff; /* Light text for readability */
+    margin: 0; /* Ensure there's no margin */
 }
 
 .dropdown-content a {
     display: inline-block;
-    margin: 10px; /* Adjusted for better spacing */
-    padding: 10px 20px; /* Balanced padding */
-    color: #fff; /* Light color for readability */
+    margin: 20px;
+    padding: 20px 20px;
+    color: black;
     text-decoration: none;
-    background-color: #444; /* Slightly lighter than the dropdown for distinction */
-    border-radius: 5px; /* Rounded corners for a modern look */
+    background-color: transparent;
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
 .dropdown-content a:hover {
-    background-color: #555; /* Darker on hover for interactive feedback */
-    color: #ddd; /* Text color change on hover */
+    background-color: #ddd;
 }
-
 
 /* Guide Content */
 .guide-container {
