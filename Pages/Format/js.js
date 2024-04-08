@@ -1,92 +1,84 @@
 document.addEventListener('DOMContentLoaded', function() {
-// Accessibility features
-const enlargeTextButton = document.getElementById('text-enlarge');
-const shrinkTextButton = document.getElementById('text-shrink');
-const speechButton = document.getElementById('text-speech');
-const body = document.body;
+    // Accessibility features
+    const enlargeTextButton = document.getElementById('text-enlarge');
+    const shrinkTextButton = document.getElementById('text-shrink');
+    const speechButton = document.getElementById('text-speech');
+    const body = document.body;
 
-enlargeTextButton.addEventListener('click', function() {
-    const currentSize = parseFloat(getComputedStyle(body).fontSize);
-    body.style.fontSize = `${currentSize + 2}px`;
-
-    // Adjust font size of <p>, <p><strong>, and <h2> elements
-    document.querySelectorAll('p, p strong, h2, button').forEach(function(element) {
-        const currentElementSize = parseFloat(getComputedStyle(element).fontSize);
-        element.style.fontSize = `${currentElementSize + 2}px`;
-    });
-});
-
-shrinkTextButton.addEventListener('click', function() {
-    const currentSize = parseFloat(getComputedStyle(body).fontSize);
-    if (currentSize > 10) {
-        body.style.fontSize = `${currentSize - 2}px`;
+    enlargeTextButton.addEventListener('click', function() {
+        const currentSize = parseFloat(getComputedStyle(body).fontSize);
+        body.style.fontSize = `${currentSize + 2}px`;
 
         // Adjust font size of <p>, <p><strong>, and <h2> elements
         document.querySelectorAll('p, p strong, h2, button').forEach(function(element) {
             const currentElementSize = parseFloat(getComputedStyle(element).fontSize);
-            if (currentElementSize > 10) {
-                element.style.fontSize = `${currentElementSize - 2}px`;
-            }
+            element.style.fontSize = `${currentElementSize + 2}px`;
         });
-    }
-});
+    });
 
-speechButton.addEventListener('click', function() {
-    const text = body.textContent || body.innerText;
-    let speech = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(speech);
-});
+    shrinkTextButton.addEventListener('click', function() {
+        const currentSize = parseFloat(getComputedStyle(body).fontSize);
+        if (currentSize > 10) {
+            body.style.fontSize = `${currentSize - 2}px`;
 
-speechButton.addEventListener('click', function() {
-    const text = body.textContent || body.innerText;
-    let speech = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(speech);
-});
-
-
-
-    // JavaScript code for step-by-step guide navigation
-document.querySelectorAll('.guide-navigation').forEach(function(nav) {
-    const prevButton = nav.querySelector('.prev-guide-step');
-    const nextButton = nav.querySelector('.next-guide-step');
-    const guidePages = nav.parentElement.querySelectorAll('.guide-page');
-
-    let currentStep = 0;
-
-    // Hide all guide pages except the first one
-    guidePages.forEach((page, index) => {
-        if (index !== currentStep) {
-            page.style.display = 'none';
+            // Adjust font size of <p>, <p><strong>, and <h2> elements
+            document.querySelectorAll('p, p strong, h2, button').forEach(function(element) {
+                const currentElementSize = parseFloat(getComputedStyle(element).fontSize);
+                if (currentElementSize > 10) {
+                    element.style.fontSize = `${currentElementSize - 2}px`;
+                }
+            });
         }
     });
 
-    // Function to show current step and hide others
-    function showStep(step) {
+    speechButton.addEventListener('click', function() {
+        const text = body.textContent || body.innerText;
+        let speech = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(speech);
+    });
+
+    // JavaScript code for step-by-step guide navigation
+    document.querySelectorAll('.guide-navigation').forEach(function(nav) {
+        const prevButton = nav.querySelector('.prev-guide-step');
+        const nextButton = nav.querySelector('.next-guide-step');
+        const guidePages = nav.parentElement.querySelectorAll('.guide-page');
+
+        let currentStep = 0;
+
+        // Hide all guide pages except the first one
         guidePages.forEach((page, index) => {
-            if (index === step) {
-                page.style.display = 'block';
-            } else {
+            if (index !== currentStep) {
                 page.style.display = 'none';
             }
         });
-    }
 
-    // Previous step button functionality
-    prevButton.addEventListener('click', function() {
-        if (currentStep > 0) {
-            currentStep--;
-            showStep(currentStep);
+        // Function to show current step and hide others
+        function showStep(step) {
+            guidePages.forEach((page, index) => {
+                if (index === step) {
+                    page.style.display = 'block';
+                } else {
+                    page.style.display = 'none';
+                }
+            });
         }
-    });
 
-    // Next step button functionality
-    nextButton.addEventListener('click', function() {
-        if (currentStep < guidePages.length - 1) {
-            currentStep++;
-            showStep(currentStep);
-        }
+        // Previous step button functionality
+        prevButton.addEventListener('click', function() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        // Next step button functionality
+        nextButton.addEventListener('click', function() {
+            if (currentStep < guidePages.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
     });
-});
 
     // Dropdown toggle with jQuery for consistency
     $(document).ready(function() {
@@ -119,13 +111,28 @@ document.querySelectorAll('.guide-navigation').forEach(function(nav) {
             navigate(1);
         }
     });
-});
 
-// animation stuff 
-$(document).ready(function() {
-    $('.guide-option').click(function() {
-        var guideId = $(this).data('guide');
-        
+    // Guide keyboard navigation already integrated as requested
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".guide-content").forEach(function (guide) {
+            const prevButton = guide.querySelector(".prev-guide-step");
+            const nextButton = guide.querySelector(".next-guide-step");
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "a" || event.key === "A") {
+                    prevButton.click();
+                } else if (event.key === "d" || event.key === "D") {
+                    nextButton.click();
+                }
+            });
+        });
+    });
+
+    // animation stuff 
+    $(document).ready(function() {
+        $('.guide-option').click(function() {
+            var guideId = $(this).
+
         // Instantly hide all guide contents
         $('.guide-content').hide();
 
@@ -160,25 +167,6 @@ document.getElementById('check-answers').addEventListener('click', function() {
 
     const resultText = `Your score is ${score} out of ${totalQuestions}.`;
     document.getElementById('quiz-results').textContent = resultText; // Display results on the page
-});
-
-
-// Guide keyboard nav
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Add event listeners for keyboard navigation
-    document.querySelectorAll(".guide-content").forEach(function (guide) {
-        const prevButton = guide.querySelector(".prev-guide-step");
-        const nextButton = guide.querySelector(".next-guide-step");
-        
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "a" || event.key === "A") {
-                prevButton.click();
-            } else if (event.key === "d" || event.key === "D") {
-                nextButton.click();
-            }
-        });
-    });
 });
 
 // Image enlarge
