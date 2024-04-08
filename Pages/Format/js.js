@@ -1,175 +1,95 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Accessibility features
     const enlargeTextButton = document.getElementById('text-enlarge');
     const shrinkTextButton = document.getElementById('text-shrink');
     const speechButton = document.getElementById('text-speech');
     const body = document.body;
 
-    enlargeTextButton.addEventListener('click', function() {
+    // Function to adjust font size
+    function adjustFontSize(increase = true) {
+        const adjustment = increase ? 2 : -2;
         const currentSize = parseFloat(getComputedStyle(body).fontSize);
-        body.style.fontSize = `${currentSize + 2}px`;
+        if (!increase && currentSize <= 10) return;
 
-        // Adjust font size of <p>, <p><strong>, and <h2> elements
-        document.querySelectorAll('p, p strong, h2, button').forEach(function(element) {
+        body.style.fontSize = `${currentSize + adjustment}px`;
+        document.querySelectorAll('p, p strong, h2, button').forEach(element => {
             const currentElementSize = parseFloat(getComputedStyle(element).fontSize);
-            element.style.fontSize = `${currentElementSize + 2}px`;
+            if (increase || (!increase && currentElementSize > 10)) {
+                element.style.fontSize = `${currentElementSize + adjustment}px`;
+            }
         });
-    });
+    }
 
-    shrinkTextButton.addEventListener('click', function() {
-        const currentSize = parseFloat(getComputedStyle(body).fontSize);
-        if (currentSize > 10) {
-            body.style.fontSize = `${currentSize - 2}px`;
+    enlargeTextButton.addEventListener('click', () => adjustFontSize());
+    shrinkTextButton.addEventListener('click', () => adjustFontSize(false));
 
-            // Adjust font size of <p>, <p><strong>, and <h2> elements
-            document.querySelectorAll('p, p strong, h2, button').forEach(function(element) {
-                const currentElementSize = parseFloat(getComputedStyle(element).fontSize);
-                if (currentElementSize > 10) {
-                    element.style.fontSize = `${currentElementSize - 2}px`;
-                }
-            });
-        }
-    });
-
-    speechButton.addEventListener('click', function() {
+    // Function to handle speech synthesis
+    function speakText() {
         const text = body.textContent || body.innerText;
         let speech = new SpeechSynthesisUtterance(text);
         window.speechSynthesis.speak(speech);
-    });
+    }
 
-    // JavaScript code for step-by-step guide navigation
-    document.querySelectorAll('.guide-navigation').forEach(function(nav) {
+    speechButton.addEventListener('click', speakText);
+
+    // Step-by-step guide navigation
+    document.querySelectorAll('.guide-navigation').forEach(nav => {
         const prevButton = nav.querySelector('.prev-guide-step');
         const nextButton = nav.querySelector('.next-guide-step');
         const guidePages = nav.parentElement.querySelectorAll('.guide-page');
-
         let currentStep = 0;
 
-        // Hide all guide pages except the first one
-        guidePages.forEach((page, index) => {
-            if (index !== currentStep) {
-                page.style.display = 'none';
-            }
-        });
+        guidePages.forEach((page, index) => page.style.display = index ? 'none' : 'block');
 
-        // Function to show current step and hide others
         function showStep(step) {
-            guidePages.forEach((page, index) => {
-                if (index === step) {
-                    page.style.display = 'block';
-                } else {
-                    page.style.display = 'none';
-                }
-            });
+            guidePages.forEach((page, index) => page.style.display = index === step ? 'block' : 'none');
         }
 
-        // Previous step button functionality
-        prevButton.addEventListener('click', function() {
-            if (currentStep > 0) {
-                currentStep--;
-                showStep(currentStep);
-            }
+        prevButton.addEventListener('click', () => {
+            if (currentStep > 0) showStep(--currentStep);
         });
 
-        // Next step button functionality
-        nextButton.addEventListener('click', function() {
-            if (currentStep < guidePages.length - 1) {
-                currentStep++;
-                showStep(currentStep);
-            }
+        nextButton.addEventListener('click', () => {
+            if (currentStep < guidePages.length - 1) showStep(++currentStep);
         });
     });
 
-    // Dropdown toggle with jQuery for consistency
+    // jQuery for dropdown and animation effects
     $(document).ready(function() {
         $('.dropdown-btn').click(function() {
             $(this).next('.dropdown-content').slideToggle('fast');
+        });
+
+        $('.guide-option').click(function() {
+            var guideId = $(this).data('guide');
+            $('.guide-content').hide();
+            $('#' + guideId).fadeIn('slow');
         });
     });
 
     // Keyboard navigation
     function navigate(direction) {
         var links = document.querySelectorAll('.nav li a');
-        var currentIndex = 0;
-        links.forEach((link, index) => {
-            if(link.classList.contains('active')) {
-                currentIndex = index;
-            }
-        });
-
-        var newIndex = currentIndex + direction;
-        if(newIndex < 0) newIndex = links.length - 1;
-        if(newIndex >= links.length) newIndex = 0;
-
+        var currentIndex = links.findIndex(link => link.classList.contains('active'));
+        var newIndex = (currentIndex + direction + links.length) % links.length;
         window.location.href = links[newIndex].href;
     }
 
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'ArrowLeft') {
-            navigate(-1);
-        } else if (event.key === 'ArrowRight') {
-            navigate(1);
-        }
+    document.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft') navigate(-1);
+        else if (event.key === 'ArrowRight') navigate(1);
     });
 
-    // Guide keyboard navigation already integrated as requested
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".guide-content").forEach(function (guide) {
-            const prevButton = guide.querySelector(".prev-guide-step");
-            const nextButton = guide.querySelector(".next-guide-step");
+    // Quiz scoring
+    document.getElementById('check-answers').addEventListener('click', function() {
+        const answers = {q1: 'b', q2: 'c', q3: 'b', q4: 'b', q5: 'b', q6: 'b', q7: 'c', q8: 'b', q9: 'b', q10: 'b'};
+        let score = Object.keys(answers).reduce((acc, question) => {
+            const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+            return acc + (selectedOption && selectedOption.value === answers[question] ? 1 : 0);
+        }, 0);
 
-            document.addEventListener("keydown", function (event) {
-                if (event.key === "a" || event.key === "A") {
-                    prevButton.click();
-                } else if (event.key === "d" || event.key === "D") {
-                    nextButton.click();
-                }
-            });
-        });
+        document.getElementById('quiz-results').textContent = `Your score is ${score} out of ${Object.keys(answers).length}.`;
     });
 
-    // animation stuff 
-    $(document).ready(function() {
-        $('.guide-option').click(function() {
-            var guideId = $(this).
-
-        // Instantly hide all guide contents
-        $('.guide-content').hide();
-
-        // Fade in the selected guide content
-        $('#' + guideId).fadeIn('slow');
-    });
+    // Image toggle size
+    window.toggleImageSize = image => image.classList.toggle('enlarged');
 });
-
-// Quiz
-document.getElementById('check-answers').addEventListener('click', function() {
-    const answers = {
-        q1: 'b', // Correct answer: b
-        q2: 'c', // Correct answer: c
-        q3: 'b', // Correct answer: b
-        q4: 'b', // Correct answer: b
-        q5: 'b', // Correct answer: b
-        q6: 'b', // Correct answer: b
-        q7: 'c', // Correct answer: c
-        q8: 'b', // Correct answer: b
-        q9: 'b', // Correct answer: b
-        q10: 'b' // Correct answer: b
-    };
-    let score = 0;
-    const totalQuestions = Object.keys(answers).length;
-
-    Object.keys(answers).forEach(question => {
-        const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-        if (selectedOption && selectedOption.value === answers[question]) {
-            score++;
-        }
-    });
-
-    const resultText = `Your score is ${score} out of ${totalQuestions}.`;
-    document.getElementById('quiz-results').textContent = resultText; // Display results on the page
-});
-
-// Image enlarge
-function toggleImageSize(image) {
-    image.classList.toggle('enlarged'); // Toggle the 'enlarged' class
-}
