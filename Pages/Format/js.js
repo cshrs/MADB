@@ -84,28 +84,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.toggleImageSize = image => image.classList.toggle('enlarged');
 
-    document.addEventListener('DOMContentLoaded', function() {
-    
-        // Add keyboard navigation for guide steps.
-        document.addEventListener("keydown", function(event) {
-            // Check if 'A' or 'D' was pressed.
-            if (event.key.toLowerCase() === "a") {
-                // Trigger click on the "Previous Step" button of the visible guide.
-                document.querySelectorAll(".guide-navigation .prev-guide-step").forEach(button => {
-                    // Only click if the button's guide content is visible.
-                    if (!button.closest(".guide-content").style.display.includes('none')) {
-                        button.click();
-                    }
-                });
-            } else if (event.key.toLowerCase() === "d") {
-                // Trigger click on the "Next Step" button of the visible guide.
-                document.querySelectorAll(".guide-navigation .next-guide-step").forEach(button => {
-                    // Only click if the button's guide content is visible.
-                    if (!button.closest(".guide-content").style.display.includes('none')) {
-                        button.click();
-                    }
-                });
-            }
-        });
-    });
-    
