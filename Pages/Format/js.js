@@ -84,12 +84,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.toggleImageSize = image => image.classList.toggle('enlarged');
 
-    // Add 'A' and 'D' keyboard navigation for guide steps
-    document.addEventListener("keydown", function (event) {
-        if (event.key.toLowerCase() === "a") {
-            document.querySelector(".prev-guide-step")?.click();
-        } else if (event.key.toLowerCase() === "d") {
-            document.querySelector(".next-guide-step")?.click();
-        }
-    });
+  // Enhanced 'A' and 'D' keyboard navigation for guide steps
+  document.addEventListener("keydown", function (event) {
+    if (event.key.toLowerCase() === "a") {
+        const visiblePrevButton = Array.from(document.querySelectorAll(".prev-guide-step")).find(button => {
+            return button.offsetParent !== null; // Checks if the button is visible
+        });
+        visiblePrevButton?.click();
+    } else if (event.key.toLowerCase() === "d") {
+        const visibleNextButton = Array.from(document.querySelectorAll(".next-guide-step")).find(button => {
+            return button.offsetParent !== null; // Checks if the button is visible
+        });
+        visibleNextButton?.click();
+    }
+});
 });
