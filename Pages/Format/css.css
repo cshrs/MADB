@@ -19,7 +19,7 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     justify-content: center; /* Horizontally centers the content */
-    align-items: center; /* Vertically centers the content, if your content is in a row */
+    align-items: center; 
     flex-direction: row;
 }
 
