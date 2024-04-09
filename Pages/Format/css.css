@@ -378,7 +378,7 @@ input[type="radio"] {
 
 
 /* Mobile Styling */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     body {
         margin: 10px;
         font-size: 14px;
@@ -395,3 +395,4 @@ input[type="radio"] {
 
     .nav li, .accessibility-buttons button {
         font-size: 12px
+    }
