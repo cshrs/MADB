@@ -314,11 +314,11 @@ button:hover {
 
   /* Quiz Styles */
   .quiz-question {
-    background: #fff;
+    background: #000000;
     padding: 20px;
     margin: 20px 0;
     border-radius: 8px;
-    box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #000000;
 }
 
 .quiz-question p {
@@ -349,7 +349,7 @@ input[type="radio"] {
 .quiz-results {
     text-align: center;
     margin-top: 20px;
-    color: #f77f7f;
+    color: #B9F1F9;
     font-size: 20px;
 }
 
