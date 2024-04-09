@@ -53,8 +53,7 @@ a {
     text-transform: uppercase;
     font-weight: bold;
     justify-content: center;
-    margin-right: 20px; /* Adds some space between the h1 and the image, adjust as needed */
-
+    margin-right: 20px; 
 }
 
 /* Content Section */
@@ -332,18 +331,18 @@ input[type="radio"] {
 #check-answers {
     display: block;
     width: 200px;
-    background: #5cb85c;
     color: white;
     border: 0;
     padding: 10px;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     margin: 20px auto;
+    background-color: #bdf7ff;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #check-answers:hover {
-    background: #4cae4c;
+    background: #000000;
 }
 
 .quiz-results {
