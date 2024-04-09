@@ -127,7 +127,7 @@ button {
     padding: 10px 15px;
     margin: 0 10px;
     color: #000000;
-    background-color: #bdf7ff;
+    background-color: #4599aa;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -136,7 +136,7 @@ button {
 
 button:hover {
     background-color: #000000;
-    color: #bdf7ff;
+    color: #4599aa;
 }
 
 /* Tutorial Section */
@@ -337,12 +337,13 @@ input[type="radio"] {
     cursor: pointer;
     font-size: 16px;
     margin: 20px auto;
-    background-color: #bdf7ff;
+    background-color: #4599aa;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #check-answers:hover {
     background: #000000;
+    color: #ddd;
 }
 
 .quiz-results {
