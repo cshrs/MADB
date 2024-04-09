@@ -378,21 +378,68 @@ input[type="radio"] {
 
 
 /* Mobile Styling */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
     body {
-        margin: 10px;
-        font-size: 14px;
+        margin: 5px;
+        font-size: 14px; /* Adjust font size for better readability */
     }
 
-    h1, h2, p, ul {
-        margin: 10px;
-        font-size: 18px;
+    .title-container {
+        flex-direction: column; /* Stack the title and icon vertically */
+        margin: 10px 0;
     }
 
-    .navigation-page, .content-section, .guide-content, #feedback-form {
-        padding: 5px;
+    .title-icon {
+        height: 100px; /* Adjust icon size */
+        margin-left: 0; /* Remove negative margin */
     }
 
-    .nav li, .accessibility-buttons button {
-        font-size: 12px
+    h1, h2 {
+        font-size: 20px; /* Adjust heading sizes */
     }
+
+    p, a, button, .dropdown-btn {
+        font-size: 16px; /* Adjust text size for better readability */
+    }
+
+    #content, .guide-content, .quiz-question {
+        padding: 20px; /* Adjust padding for content areas */
+        margin: 10px; /* Reduce margin to fit mobile screens */
+    }
+
+    #bottomnav {
+        padding: 5px 0; /* Reduce padding */
+    }
+
+    .nav a {
+        font-size: 16px; /* Reduce font size for navigation links */
+        padding: 5px 10px; /* Adjust padding */
+    }
+
+    .accessibility-buttons button {
+        padding: 5px 10px; /* Adjust button sizes */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .guide-option, .dropdown-content a {
+        font-size: 20px; /* Adjust dropdown font size */
+    }
+
+    .custom-dropdown-wrapper, .guide-container, .quiz-results {
+        padding: 10px; /* Adjust padding */
+    }
+
+    .dropdown-content {
+        font-size: 18px; /* Adjust font size for dropdown content */
+    }
+
+    /* Adjust the size and position of images and other media elements */
+    img, .enlarge-image {
+        max-width: 100%; /* Ensure images are not larger than the screen */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .enlarge-image.zoomed {
+        transform: scale(1); /* Adjust zoom level on mobile */
+    }
+}
