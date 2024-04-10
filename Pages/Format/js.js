@@ -93,3 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.querySelectorAll('.enlarge-image').forEach(item => {
+    // Add click event listener to each item
+    item.addEventListener('click', function() {
+        // Toggle the 'zoomed' class on click
+        this.classList.toggle('zoomed');

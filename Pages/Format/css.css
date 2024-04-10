@@ -366,14 +366,15 @@ input[type="radio"] {
 .enlarge-image {
     transition: transform 0.3s ease;
     cursor: pointer;
-    size: 700px, auto;
+    width: 700px; 
+    height: auto; 
 }
 
 /* Style for zoomed image */
 .enlarge-image.zoomed {
     transform: scale(2); 
     z-index: 1000; 
-    position: relative; 
+    position: relative;
 }
 
 
