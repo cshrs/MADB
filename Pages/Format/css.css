@@ -366,6 +366,7 @@ input[type="radio"] {
 .enlarge-image {
     transition: transform 0.3s ease;
     cursor: pointer;
+    size: 700px, auto;
 }
 
 /* Style for zoomed image */
