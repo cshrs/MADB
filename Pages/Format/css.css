@@ -139,14 +139,12 @@ button:hover {
     color: #4599aa;
 }
 
-/* Tutorial Section */
-#tutorial {
-    padding: 40px;
-    background-color: #333;
-    color: #ffffff;
-    margin: 20px 0;
-    line-height: 1.6;
-    border-radius: 8px;
+/* footerstyle */
+footer {
+
+    font-size: 12px;
+    color: #bdbdbd;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 /* Dropdown */
