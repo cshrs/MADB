@@ -95,9 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('quiz-results').textContent = `Your score is ${score} out of ${Object.keys(answers).length}.`;
         
-        // Optional: Scroll to the results section
-        document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth' });
-    });
+    
     
     window.toggleImageSize = image => image.classList.toggle('enlarged');
 
