@@ -258,10 +258,6 @@ footer {
     
 }
 
-.last-guide-step .prev-guide-step,
-.last-guide-step .next-guide-step {
-    display: none;
-}
 
 /* Ensure the Next Guide button is visible */
 .last-guide-step .next-guide {
