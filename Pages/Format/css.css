@@ -358,11 +358,11 @@ input[type="radio"] {
 }
 
 .quiz-question.correct {
-    background-color: #C8E6C9; /* Light green */
+    background-color: #82f786; 
 }
 
 .quiz-question.incorrect {
-    background-color: #FFCDD2; /* Light red */
+    background-color: #fd8f9a; 
 }
 
 
