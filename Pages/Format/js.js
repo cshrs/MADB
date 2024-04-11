@@ -100,6 +100,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('quiz-results').textContent = `Your score is ${score} out of ${Object.keys(answers).length}.`;
     });
 
+    // Function to navigate guide steps using 'A' and 'D' keys
+    document.addEventListener("keydown", function (event) {
+        if (event.key.toLowerCase() === "a") {
+            document.querySelector(".prev-guide-step")?.click();
+        } else if (event.key.toLowerCase() === "d") {
+            document.querySelector(".next-guide-step")?.click();
+        }
+    });
+
     // Add click event listener for image zoom functionality
     document.querySelectorAll('.enlarge-image').forEach(image => {
         image.addEventListener('click', function() {
@@ -107,3 +116,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function showNextGuide(nextGuideId) {
+    // Hide all guide contents
+    document.querySelectorAll('.guide-content').forEach(guide => {
+        guide.style.display = 'none';
+    });
+    // Show the next guide based on the provided ID
+    document.getElementById(nextGuideId).style.display = 'block';
+}
+
+function showStep(currentStep, totalSteps) {
+    // Hide all steps
+    document.querySelectorAll('.guide-page').forEach((page) => {
+        page.style.display = 'none';
+    });
+
+    // Show current step
+    document.querySelector(`.guide-page[data-step="${currentStep}"]`).style.display = 'block';
+
+    // If last step, manage navigation buttons visibility
+    if (currentStep === totalSteps) {
+        document.querySelector('.next-guide-step').style.display = 'none'; // Hide "Next Step" button
+        document.querySelector('.next-guide').style.display = 'block'; // Show "Next Guide" button
+    } else {
+        document.querySelector('.next-guide-step').style.display = 'block'; // Show "Next Step" button
+        document.querySelector('.next-guide').style.display = 'none'; // Hide "Next Guide" button
+    }
+}
+
+function showNextGuide(nextGuideId) {
+    // Implementation to navigate to the next guide
+}
