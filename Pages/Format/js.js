@@ -74,15 +74,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('check-answers').addEventListener('click', function() {
         const answers = {q1: 'b', q2: 'c', q3: 'b', q4: 'b', q5: 'b', q6: 'b', q7: 'c', q8: 'b', q9: 'b', q10: 'b'};
-        let score = Object.keys(answers).reduce((acc, question) => {
+        let score = 0;
+    
+        for (const question in answers) {
             const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-            return acc + (selectedOption && selectedOption.value === answers[question] ? 1 : 0);
-        }, 0);
-
+            const correctAnswer = answers[question];
+            const quizQuestion = document.querySelector(`.quiz-question:nth-child(${parseInt(question.slice(1))})`);
+    
+            if (selectedOption && selectedOption.value === correctAnswer) {
+                score++;
+                quizQuestion.classList.remove('incorrect');
+            } else {
+                quizQuestion.classList.add('incorrect');
+            }
+        }
+    
         document.getElementById('quiz-results').textContent = `Your score is ${score} out of ${Object.keys(answers).length}.`;
     });
-
-    window.toggleImageSize = image => image.classList.toggle('enlarged');
+    
 
     // Add 'A' and 'D' keyboard navigation for guide steps
     document.addEventListener("keydown", function (event) {
