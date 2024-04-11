@@ -75,23 +75,31 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('check-answers').addEventListener('click', function() {
         const answers = {q1: 'b', q2: 'c', q3: 'b', q4: 'b', q5: 'b', q6: 'b', q7: 'c', q8: 'b', q9: 'b', q10: 'b'};
         let score = 0;
-    
-        for (const question in answers) {
+        
+        // Iterate through each question and mark it as correct or incorrect
+        Object.keys(answers).forEach(question => {
+            const questionDiv = document.querySelector(`input[name="${question}"]`).closest('.quiz-question');
             const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-            const correctAnswer = answers[question];
-            const quizQuestion = document.querySelector(`.quiz-question:nth-child(${parseInt(question.slice(1))})`);
-    
-            if (selectedOption && selectedOption.value === correctAnswer) {
+            
+            if (selectedOption && selectedOption.value === answers[question]) {
+                // Increment score and mark as correct
                 score++;
-                quizQuestion.classList.remove('incorrect');
+                questionDiv.classList.add('correct');
+                questionDiv.classList.remove('incorrect');
             } else {
-                quizQuestion.classList.add('incorrect');
+                // Mark as incorrect
+                questionDiv.classList.add('incorrect');
+                questionDiv.classList.remove('correct');
             }
-        }
-    
+        });
+        
         document.getElementById('quiz-results').textContent = `Your score is ${score} out of ${Object.keys(answers).length}.`;
+        
+        // Optional: Scroll to the results section
+        document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth' });
     });
     
+    window.toggleImageSize = image => image.classList.toggle('enlarged');
 
     // Add 'A' and 'D' keyboard navigation for guide steps
     document.addEventListener("keydown", function (event) {

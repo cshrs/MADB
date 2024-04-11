@@ -357,6 +357,15 @@ input[type="radio"] {
     font-size: 20px;
 }
 
+.quiz-question.correct {
+    background-color: #C8E6C9; /* Light green */
+}
+
+.quiz-question.incorrect {
+    background-color: #FFCDD2; /* Light red */
+}
+
+
 /* link styling */
 .resource-link {
     font-weight: bold;
