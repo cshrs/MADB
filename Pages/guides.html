@@ -32,60 +32,37 @@
         </div>
     </div>
 
-
+    <!-- Guide Content Sections -->
     <div id="facebook" class="guide-content" style="display: none;">
         <h1 class="facebook-h1">Facebook Privacy Guide</h1>
         <div class="guide-container">
-            <!-- First Guide Page -->
             <div class="guide-page left">
-                <!-- Content -->
                 <h2 class="facebook-h2">1. Customize Your Privacy Settings</h2>
-                <p><strong>Profile Privacy:</strong> Go through your Facebook privacy settings and adjust who can see your posts, send you friend requests, and how people can look you up. Regularly review these settings to ensure they're set according to your preference. Remember the best practice is to be cautious!</p>
-                <img src="Images/accountname.png" alt="Account name" class="enlarge-image" onclick="toggleImageSize(this);"> 
-                <div class="guide-navigation">
-                    <!-- Possibly no "Previous Step" here if this is the first step -->
-                    <button class="next-guide-step">Next Step</button>
-                </div>
+              
+              <p><strong>Profile Privacy:</strong> Go through your Facebook privacy settings and adjust who can see your posts, send you friend requests, and how people can look you up. Regularly review these settings to ensure they're set according to your preference. Remember the best practice is to be cautious!</p>
+              <img src="Images/accountname.png" alt="Account name" class="enlarge-image" onclick="toggleImageSize(this);"> 
+
             </div>
-            
-            <!-- Middle Guide Page(s) -->
             <div class="guide-page right">
-                <!-- Content -->
                 <h2 class="facebook-h2">2. Review Your Friends List</h2>
                 <p><strong>Know Your Friends:</strong> Periodically review your friends list to ensure you're only connected with people you know and trust. Remember, the more people have access to your information, the greater the risk of data misuse.</p>
                 <img src="Images/friendslist.png" alt="Friends list photo" class="enlarge-image" onclick="toggleImageSize(this);"> 
-                <div class="guide-navigation">
-                    <button class="prev-guide-step">Previous Step</button>
-                    <button class="next-guide-step">Next Step</button>
-                </div>
+
             </div>
-            
-            <!-- Last Guide Page -->
             <div class="guide-page left">
-                <!-- Content -->
                 <h2 class="facebook-h2">3. Limit The Information You Share</h2>
                 <p><strong>Be Mindful:</strong> Be cautious about the personal information you share on your profile or posts. Avoid sharing sensitive information that could be used for identity theft, such as your home address, phone number, or date of birth.</p>
-                <div class="guide-navigation">
-                    <button class="prev-guide-step">Previous Step</button>
-                    <!-- Next Guide button only for the last step -->
-                    <button class="next-guide" onclick="showNextGuide('email')">Next Guide: Email Security</button>
-                </div>
+           
+                        <button class="next-guide-step" onclick="showNextGuide('email')">Next Guide: Email Security</button>
+
+            </div>
+            <!-- Navigation buttons -->
+            <div class="guide-navigation">
+                <button class="prev-guide-step">Previous Step</button>
+                <button class="next-guide-step">Next Step</button>
             </div>
         </div>
     </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div id="email" class="guide-content" style="display: none;">
         <h1 class="email-h1">Guide to Identifying Scam Emails</h1>
