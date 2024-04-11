@@ -116,3 +116,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function showNextGuide(nextGuideId) {
+    // Hide all guide contents
+    document.querySelectorAll('.guide-content').forEach(guide => {
+        guide.style.display = 'none';
+    });
+    // Show the next guide based on the provided ID
+    document.getElementById(nextGuideId).style.display = 'block';
+}
