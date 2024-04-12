@@ -18,7 +18,7 @@ body {
     color: #ffffff;
     text-transform: uppercase;
     font-weight: bold;
-    justify-content: center; /* Horizontally centers the content */
+    justify-content: center; 
     align-items: center; 
     flex-direction: row;
 }
@@ -211,7 +211,7 @@ footer {
     background-color: #000000;
     color: #ffffff;
     padding: 40px;
-    margin: 50px auto 100px; /* Top, Horizontal Auto, Bottom */
+    margin: 50px auto 100px; 
     max-width: 1000px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -261,7 +261,7 @@ footer {
 
 /* Ensure the Next Guide button is visible */
 .last-guide-step .next-guide {
-    display: inline-block; /* or 'block' depending on your design */
+    display: inline-block; 
 }
 
 /* Guide styling */
@@ -397,65 +397,65 @@ input[type="radio"] {
 @media (max-width: 768px) {
     body {
         margin: 5px;
-        font-size: 14px; /* Adjust font size for better readability */
+        font-size: 14px; 
     }
 
     .title-container {
-        flex-direction: column; /* Stack the title and icon vertically */
+        flex-direction: column; 
         margin: 10px 0;
     }
 
     .title-icon {
-        height: 100px; /* Adjust icon size */
-        margin-left: 0; /* Remove negative margin */
+        height: 100px; 
+        margin-left: 0;
     }
 
     h1, h2 {
-        font-size: 20px; /* Adjust heading sizes */
+        font-size: 20px; 
     }
 
     p, a, button, .dropdown-btn {
-        font-size: 16px; /* Adjust text size for better readability */
+        font-size: 16px; 
     }
 
     #content, .guide-content, .quiz-question {
-        padding: 20px; /* Adjust padding for content areas */
-        margin: 10px; /* Reduce margin to fit mobile screens */
+        padding: 20px; 
+        margin: 10px; 
     }
 
     #bottomnav {
-        padding: 5px 0; /* Reduce padding */
+        padding: 5px 0; 
     }
 
     .nav a {
-        font-size: 16px; /* Reduce font size for navigation links */
-        padding: 5px 10px; /* Adjust padding */
+        font-size: 16px; 
+        padding: 5px 10px; 
     }
 
     .accessibility-buttons button {
-        padding: 5px 10px; /* Adjust button sizes */
-        font-size: 16px; /* Adjust font size */
+        padding: 5px 10px; 
+        font-size: 16px;
     }
 
     .guide-option, .dropdown-content a {
-        font-size: 20px; /* Adjust dropdown font size */
+        font-size: 20px; 
     }
 
     .custom-dropdown-wrapper, .guide-container, .quiz-results {
-        padding: 10px; /* Adjust padding */
+        padding: 10px; 
     }
 
     .dropdown-content {
-        font-size: 18px; /* Adjust font size for dropdown content */
+        font-size: 18px; 
     }
 
     /* Adjust the size and position of images and other media elements */
     img, .enlarge-image {
-        max-width: 100%; /* Ensure images are not larger than the screen */
-        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; 
+        height: auto; 
     }
 
     .enlarge-image.zoomed {
-        transform: scale(1); /* Adjust zoom level on mobile */
+        transform: scale(1); 
     }
 }
